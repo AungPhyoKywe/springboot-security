@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Beautiful Dashboard Welcome</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #f9f9f9;
+		}
+
+		/* Header styles */
+		header {
+			background-color: #333;
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+		}
+
+		/* Sidebar styles */
+		.sidebar {
+			background-color: #fff;
+			float: left;
+			width: 250px;
+			height: 100vh;
+			padding-top: 60px;
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+		}
+
+		.sidebar ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		.sidebar li {
+			margin-bottom: 15px;
+		}
+
+		.sidebar a {
+			display: block;
+			color: #333;
+			text-decoration: none;
+			padding: 10px;
+			border-left: 5px solid transparent;
+		}
+
+		.sidebar a:hover {
+			background-color: #f2f2f2;
+			border-left-color: #4CAF50;
+		}
+
+		/* Main content styles */
+		.content {
+			padding: 20px;
+			margin-left: 280px;
+			/* Account for sidebar width and some spacing */
+		}
+
+		/* Card styles */
+		.card {
+			background-color: #fff;
+			border-radius: 5px;
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+			padding: 20px;
+			margin-bottom: 20px;
+		}
+
+		.card h2 {
+			margin-top: 0;
+		}
+
+		.card p {
+			margin-bottom: 0;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1 th:text="${userdetail.fullname}">Welcome to Your Dashboard</h1>
+	</header>
+
+	<div class="sidebar">
+		<ul>
+			<li><a href="#">Dashboard</a></li>
+			<li><a href="#">Profile</a></li>
+			<li><a href="#">Settings</a></li>
+			<li><a href="#">Logout</a></li>
+		</ul>
+	</div>
+
+	<div class="content">
+		<div class="card">
+			<h2>Welcome, User!</h2>
+			<p>This is your dashboard. Feel free to explore the various options in the sidebar.</p>
+		</div>
+
+		<div class="card">
+			<h2>Recent Activity</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eu dolor vitae libero scelerisque
+				auctor. Nullam semper sem sed quam auctor blandit.</p>
+		</div>
+
+		<div class="card">
+			<h2>Notifications</h2>
+			<p>Nulla facilisi. Maecenas aliquet, nisi in rhoncus feugiat, sapien tortor euismod odio, a tempor neque
+				tellus in turpis.</p>
+		</div>
+	</div>
+</body>
+
+</html>

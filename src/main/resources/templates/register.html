@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Beautiful Registration Form</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f7f7f7;
+			margin: 0;
+			padding: 0;
+		}
+
+		.register-form {
+			max-width: 400px;
+			margin: 100px auto;
+			padding: 40px;
+			background-color: #ffffff;
+			border-radius: 10px;
+			box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+		}
+
+		.register-form h2 {
+			text-align: center;
+			margin-bottom: 20px;
+			color: #333;
+		}
+
+		.register-form label {
+			display: block;
+			margin-bottom: 8px;
+			color: #555;
+		}
+
+		.register-form input[type="text"],
+		.register-form input[type="password"] {
+			width: 100%;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+		}
+
+		.register-form button {
+			width: 100%;
+			padding: 10px;
+			background-color: #4CAF50;
+			color: #ffffff;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+
+		.register-form button:hover {
+			background-color: #45a049;
+		}
+
+		.register-form .login-link {
+			text-align: center;
+			margin-top: 20px;
+			color: #888;
+		}
+
+		.register-form .login-link a {
+			color: #4CAF50;
+			text-decoration: none;
+		}
+
+		.register-form .login-link a:hover {
+			text-decoration: underline;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="register-form">
+		<div th:if="param.success">
+
+			<div class="success-message">
+				<p>Registration Successfull</p>
+			</div>
+		</div>
+		<h2>Register</h2>
+		<form th:action="@{/register}" method="post" role="form" th:object="${user}">
+			<label for="username">Username:</label>
+			<input th:field="*{username}" type="text" id="username" name="username" required>
+
+			<label for="password">Password:</label>
+			<input th:field="*{password}" type="password" id="password" name="password" required>
+
+			<label for="fullname">Full Name:</label>
+			<input th:field="*{fullname}" type="text" id="fullname" name="fullname" required>
+
+			<button type="submit">Register</button>
+
+			<div class="login-link">
+				Already have an account? <a th:href="@{/login}">Login</a>
+			</div>
+		</form>
+	</div>
+</body>
+
+</html>
